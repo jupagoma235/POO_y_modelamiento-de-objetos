@@ -5,8 +5,14 @@
 package sofka.com;
 
 /**
+ * [Detalle del objeto de la clase.
+ * Corresponde a la clase Main de inicio por defecto.
+ * ]
+ * @version: 1.01.001  16/02/2022.
  *
- * @author jpgonzalez
+ * @author Juan Pablo Gonzalez Marin.
+ * 
+ * @since: 1.01.001
  */
 public class Main {
 
@@ -27,6 +33,9 @@ public class Main {
      * @see: No tiene documentación para consultar.
      */
     public static void main(String[] args) {
+        /**
+         * Instancia del objeto VectorClass.
+         */
         VectorClass exercise = new VectorClass();
         exercise.Vectorexercise();
     }
