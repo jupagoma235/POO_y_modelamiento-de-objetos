@@ -11,8 +11,8 @@ import java.util.List;
  * @author jpgonzalez
  */
 public interface ICapture {
-    public void capture();
-    public void quikShort();
-    public void bubble(float[] lista1);
-    public void printArray(float[] lista2);    
+    public void Capture();
+    public void QuickSort(int start,int end);
+    public void Bubble();
+    public void PrintArray(float[] lista2);    
 }

@@ -15,7 +15,7 @@ public class Main {
      */
     public static void main(String[] args) {
         Capture start= new Capture();
-        start.capture();
+        start.Capture();
     }
     
 }
