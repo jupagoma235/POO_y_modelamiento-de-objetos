@@ -15,7 +15,17 @@ package Sofka.com;
  * @since: 1.01.001
  */
 public interface IFerry {
+    /**
+     * Corresponde a la definición del metodo que estructura el ingreso de los vehiculos al ferry.
+     */
     public void Vehicle();
+    /**
+     * Corresponde a la definición del metodo que controla el ingreso de la fecha por parte del usuario.
+     * @return Retorna el String que contiene la fecha en formato yyy/MM/dd.
+     */
     public String EntryDate();
+    /**
+     * Corresponde a la definición del metodo que imprime el array de vehiculos.
+     */
     public void PrintArray();
 }

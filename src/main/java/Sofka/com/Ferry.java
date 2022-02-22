@@ -19,9 +19,18 @@ import java.util.Scanner;
  * @since: 1.01.001
  */
 public class Ferry implements IFerry{
+    /**
+     * Array de objetos que guarda el listado general de vehiculos que ingresan al ferry.
+     */
     ArrayList<Vehicle> vehicles = new ArrayList(); 
+    /**
+     * Se instancia el objeto Scanner para capturar los datos ingresados por el usuario.
+     */
     Scanner sc= new Scanner(System.in);
-    int option=10;
+    /**
+     * Variable que captura los datos y sirve para el manejo del ciclo while en el método vehículo.
+     */
+    int option=0;
   
      /**
     * @trows Exepción
@@ -40,7 +49,9 @@ public class Ferry implements IFerry{
     @Override      
     public void Vehicle() {
         try{
-            int option=0;            
+            /**
+             * Arreglo de String que reciben los datos de ingreso del vehiculo.
+             */            
             String[] dates= new String[7];
             System.out.println("........................................................................................................................");
             System.out.println("*******************************   Ingrese los datos del vehiculo que entra al Ferry    *********************************");
@@ -108,6 +119,7 @@ public class Ferry implements IFerry{
     }
       /**
      * @return String aux1 que contiene la fecha completa en formato yyyy/MM/dd 
+     * 
      * @trows Exepción
      * 
      * [Detalles del objetivo del metodo
@@ -123,22 +135,38 @@ public class Ferry implements IFerry{
      */
     @Override
     public String EntryDate(){
+        /**
+         * Variable del metodo que sirve como auxiliar para ingresar la fecha la captura de números.
+         */
         int aux=0;
+        /**
+         * Variable creada para controlar el ciclo do While.
+         */
         int controlcicle=0;
-        String aux1="";        
-        do{
-            controlcicle=0;
-            System.out.println("Ingrese la fecha de matricula del vehiculo en formato ");
-            System.out.println("Año : ");
-            aux=sc.nextInt();
-            if(aux>1800){aux1=String.valueOf(aux);controlcicle=controlcicle+1;}else{System.out.println("Año no valido, ingrese el dato de nuevo superior al año 1800");}
-            System.out.println("Mes : ");
-            aux=sc.nextInt();
-            if(aux>0&&aux<=12){aux1=aux1+"/"+String.valueOf(aux);controlcicle=controlcicle+1;}else{System.out.println("Mes no valido, ingrese el dato de nuevo");}
-            System.out.println("Dia : ");
-            aux=sc.nextInt();
-            if(aux>0&&aux<=31){aux1=aux1+"/"+String.valueOf(aux);controlcicle=controlcicle+1;}else{System.out.println("Dia no valido, ingrese el dato de nuevo");}
-        }while(controlcicle!=3);
+        /**
+         * Variable creada con la finalidad de recibir los números de la fecha y darles formato.
+         */
+        String aux1="";   
+        try{
+            do{
+                controlcicle=0;
+                System.out.println("Ingrese la fecha de matricula del vehiculo en formato ");
+                System.out.println("Año : ");
+                aux=sc.nextInt();
+                if(aux>1800){aux1=String.valueOf(aux);controlcicle=controlcicle+1;}else{System.out.println("Año no valido, ingrese el dato de nuevo superior al año 1800");}
+                System.out.println("Mes : ");
+                aux=sc.nextInt();
+                if(aux>0&&aux<=12){aux1=aux1+"/"+String.valueOf(aux);controlcicle=controlcicle+1;}else{System.out.println("Mes no valido, ingrese el dato de nuevo");}
+                System.out.println("Dia : ");
+                aux=sc.nextInt();
+                if(aux>0&&aux<=31){aux1=aux1+"/"+String.valueOf(aux);controlcicle=controlcicle+1;}else{System.out.println("Dia no valido, ingrese el dato de nuevo");}
+            }while(controlcicle!=3);            
+        }catch(Exception e){
+            System.out.print(e.getMessage());
+        }
+        finally{
+            System.out.println("Fecha ingresada correctamente  :)");
+        }
         return aux1;
     }
       /**
@@ -157,11 +185,15 @@ public class Ferry implements IFerry{
      */
     @Override
     public void PrintArray(){
-        System.out.println("-----------------------------------------Listado de vehiculos en el ferry-----------------------------------------------");
-        for(int i=0;i<vehicles.size();i++){
-            System.out.println(vehicles.get(i).toString());
+        try{
+            System.out.println("-----------------------------------------Listado de vehiculos en el ferry-----------------------------------------------");
+            for(int i=0;i<vehicles.size();i++){
+                System.out.println(vehicles.get(i).toString());
+            }
+            System.out.println("------------------------------------------------------------------------------------------------------------------------");
+        }catch(Exception e){
+            System.out.print(e.getMessage());
         }
-        System.out.println("------------------------------------------------------------------------------------------------------------------------");
     }
 
 }
