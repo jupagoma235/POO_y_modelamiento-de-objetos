@@ -5,13 +5,33 @@
 package com.mycompany.sistema_planetario;
 
 /**
+ * [Detalle del objeto de la clase.
+ * Corresponde a la clase Main de inicio por defecto.
+ * ]
+ * @version: 1.01.001  24/02/2022.
  *
- * @author jpgonzalez
+ * @author Juan Pablo Gonzalez Marin.
+ * 
+ * @since: 1.01.001
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
+   /**
+     * @param args the command line arguments estandar del metodo Main.
+     *  
+     * @trows Exepción
+     * 
+     * [Detalles del objetivo del metodo
+     * Metodo inicial necesario para inicializar el programa, desde este se llama a la clase Ferry
+     * ]
+     * @version: 1.01.001  24/02/2022.
+     *
+     * @autor: Juan Pablo Gonzalez Marin
+     *
+     * @since: 1.01.001
+     * 
+     * @see: No tiene documentación para consultar.
+     * 
      */
     public static void main(String[] args) {
         
